@@ -415,7 +415,7 @@ services:
         "-U",
         "postgres",
         "-h",
-        "http://213.136.78.130/"
+        "localhost"
         ]
       interval: 5s
       timeout: 5s
@@ -465,6 +465,8 @@ services:
       start_period : 30s
     environment:
       LOGFLARE_PUBLIC_ACCESS_TOKEN: ${LOGFLARE_PUBLIC_ACCESS_TOKEN}
+      VECTOR_API_ENABLED: "true"
+      VECTOR_API_ADDRESS: "0.0.0.0:9001"
     command:
       [
         "--config",
