@@ -420,9 +420,9 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
-    # depends_on:
-    #   vector:
-    #     condition: service_healthy
+      depends_on:
+       vector:
+         condition: service_healthy
     environment:
       POSTGRES_HOST: /var/run/postgresql
       PGPORT: ${POSTGRES_PORT}
@@ -462,7 +462,6 @@ services:
       timeout: 5s
       interval: 5s
       retries: 3
-      start_period : 30s
     environment:
       LOGFLARE_PUBLIC_ACCESS_TOKEN: ${LOGFLARE_PUBLIC_ACCESS_TOKEN}
     command:
