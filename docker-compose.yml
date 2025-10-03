@@ -421,7 +421,7 @@ services:
       timeout: 5s
       retries: 10
       depends_on:
-       vector:
+        vector:
          condition: service_healthy
     environment:
       POSTGRES_HOST: /var/run/postgresql
